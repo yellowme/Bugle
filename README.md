@@ -100,8 +100,8 @@ Bugle.shared.play("Are you sure?", "Push to master", "Yes, I'm a savage", true, 
 
 ## Contributors
 
-[Luis Burgos](https://github.com/LuisBurgos/) - luisarturo.burgos@gmail.com
-[María Patrón](https://github.com/maj24/) - mariajose.patron@gmail.com
+* [Luis Burgos](https://github.com/LuisBurgos/) - luisarturo.burgos@gmail.com
+* [María Patrón](https://github.com/maj24/) - mariajose.patron@gmail.com
 
 ## License
 

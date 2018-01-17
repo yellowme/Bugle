@@ -58,16 +58,32 @@
 		A0FE4EFC200FDA4400433393 /* Bugle */ = {
 			isa = PBXGroup;
 			children = (
+				A0FE4F13200FE80800433393 /* Example */,
+				A0FE4F14200FE80800433393 /* Sources */,
+			);
+			path = Bugle;
+			sourceTree = "<group>";
+		};
+		A0FE4F13200FE80800433393 /* Example */ = {
+			isa = PBXGroup;
+			children = (
 				A0FE4EFD200FDA4400433393 /* AppDelegate.swift */,
 				A0FE4EFF200FDA4400433393 /* ViewController.swift */,
-				A0FE4F0F200FDAB600433393 /* Bugle.swift */,
 				A0FE4F11200FDB2600433393 /* Utils.swift */,
 				A0FE4F01200FDA4400433393 /* Main.storyboard */,
 				A0FE4F04200FDA4400433393 /* Assets.xcassets */,
 				A0FE4F06200FDA4400433393 /* LaunchScreen.storyboard */,
 				A0FE4F09200FDA4400433393 /* Info.plist */,
 			);
-			path = Bugle;
+			path = Example;
+			sourceTree = "<group>";
+		};
+		A0FE4F14200FE80800433393 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A0FE4F0F200FDAB600433393 /* Bugle.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,6 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -283,7 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Bugle/Info.plist;
+				INFOPLIST_FILE = Bugle/Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.yellowme.Bugle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,7 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Bugle/Info.plist;
+				INFOPLIST_FILE = Bugle/Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.yellowme.Bugle;
 				PRODUCT_NAME = "$(TARGET_NAME)";

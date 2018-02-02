@@ -8,22 +8,6 @@
 
 import UIKit
 
-public struct BugleOptions {
-    public let tintColor: UIColor?
-    public let errorTintColor: UIColor?
-    public let cancelMessage: String
-    public let commonTitle: String
-    public let commonAction: String
-    
-    public init(tintColor: UIColor?, cancelMessage: String, commonTitle: String, commonAction: String, errorTintColor: UIColor?) {
-        self.tintColor = tintColor
-        self.cancelMessage = cancelMessage
-        self.commonTitle = commonTitle
-        self.commonAction = commonAction
-        self.errorTintColor = errorTintColor
-    }
-}
-
 typealias BugleActionStyles = (confirm: UIAlertActionStyle, cancel: UIAlertActionStyle, color: UIColor?)
 
 @objc public protocol BugleDelegate {
@@ -52,7 +36,7 @@ public class Bugle {
         
         guard
             let preferredOptions = Bugle.preferredOptions,
-            let style = type.style() else {
+            let style = type.style(for: preferredOptions) else {
                 fatalError("Error - you must call setup before accessing this method")
         }
         
@@ -80,40 +64,6 @@ public class Bugle {
             presentDecorated(alert, on: controller, tintColor: style.color)
         } else {
             controller.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    //MARK: Styling
-    
-    public enum BugleType {
-        case single
-        case confirmation
-        case risky
-        
-        func style() -> BugleActionStyles? {
-            guard let preferredOptions = Bugle.preferredOptions else { return nil }
-            
-            switch self {
-            case .risky:
-                return (.cancel, .default, preferredOptions.errorTintColor)
-            default:
-                return (.default, .cancel, preferredOptions.tintColor)
-            }
-        }
-    }
-}
-
-extension Bugle {
-    internal func prepare(with title: String, _ message: String) -> UIAlertController{
-        return UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-    }
-    
-    internal func presentDecorated(_ alert: UIAlertController, on: UIViewController, tintColor: UIColor?) {
-        if let tintColor = tintColor {
-            alert.view.tintColor = tintColor
-            on.present(alert, animated: true, completion: {
-                alert.view.tintColor = tintColor
-            })
         }
     }
 }

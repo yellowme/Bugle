@@ -21,13 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     fileprivate var options: BugleOptions {
-        return BugleOptions(
-            tintColor: .green,
-            cancelMessage: "No, forget it",
-            commonTitle: "Bugle news!",
-            commonAction: "Understood",
-            errorTintColor: UIColor.yellow.darker(by: 30)
-        )
+        return [
+            //.tint: UIColor.green,
+            .cancel: "No",
+            .title: "Bugle App Delegate title!",
+            .action: "Understood",
+            //.errorTint: UIColor.yellow.darker(by: 30) ?? UIColor.yellow
+        ]
     }
 }
 

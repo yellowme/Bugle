@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapPlayCustomMessage(_ sender: UIButton) {
-        let options: [BuglePiece : Any] = [
+        let options: BugleOptions = [
             .cancel: "No, forget it",            
             .title: "Are you sure?",
             .action:  "Yes, I'm a savage",

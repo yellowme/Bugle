@@ -8,6 +8,15 @@
 
 import UIKit.UIColor
 
+/**
+ Combines user defined and "play" method call options to unwrapped all settings for
+ the alerts.
+ 
+ - parameter options: Bugle pieces passed through the "play" method call.
+ - parameter defaultOptions: User preferred bugle pieces defined after call "setup" method.
+ 
+ - returns: The title, action title, cancel message, tint color and error tint color for the alert
+ */
 internal func merge(_ options: BugleOptions?, with defaultOptions: BugleOptions?) -> MergedOptions {
     if options == nil {
         guard defaultOptions != nil else {

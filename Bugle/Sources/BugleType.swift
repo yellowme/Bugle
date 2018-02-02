@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yellowme. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIAlertController
 
 /**
  Wrappers for define style and setup for the alert

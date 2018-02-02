@@ -20,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    fileprivate var options: [BuglePiece : Any] {
+    fileprivate var options: BugleOptions {
         return [
-            .tint: UIColor.green,
+            //.tint: UIColor.green,
             .cancel: "No",
             .title: "Bugle App Delegate title!",
             .action: "Understood",
-            .errorTint: UIColor.yellow.darker(by: 30) ?? UIColor.yellow
+            //.errorTint: UIColor.yellow.darker(by: 30) ?? UIColor.yellow
         ]
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yellowme. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /**
  Defines all the custom options for the alert.

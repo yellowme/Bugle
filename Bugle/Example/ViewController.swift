@@ -14,17 +14,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func didTapPlaySimpleMessage(_ sender: UIButton) {
-        Bugle.shared.play("Hello World!", "Bugle Bugle!", on: self)
+        Bugle.shared.play("Hello World!", on: self)
     }
     
     @IBAction func didTapPlayCustomMessage(_ sender: UIButton) {
-        Bugle.shared.play("Are you sure?", "Push to master", "Yes, I'm a savage", true, self, on: self, type: .risky)
+        let options: [BuglePiece : Any] = [
+            .cancel: "No, forget it",
+            .message: "Push to master",
+            .action:  "Yes, I'm a savage",
+        ]
+        Bugle.shared.play("Are you sure?", options, on: self, ofType: .risky)
     }
     
 }

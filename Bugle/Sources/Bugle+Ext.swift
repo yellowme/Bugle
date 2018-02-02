@@ -19,12 +19,10 @@ extension Bugle {
     /**
      Takes an UIAlertController and applys a given tint color.
      */
-    internal func presentDecorated(_ alert: UIAlertController, on: UIViewController, tintColor: UIColor?) {
-        if let tintColor = tintColor {
+    internal func presentDecorated(_ alert: UIAlertController, on: UIViewController, tintColor: UIColor) {
+        alert.view.tintColor = tintColor
+        on.present(alert, animated: true, completion: {
             alert.view.tintColor = tintColor
-            on.present(alert, animated: true, completion: {
-                alert.view.tintColor = tintColor
-            })
-        }
+        })
     }
 }

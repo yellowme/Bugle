@@ -20,11 +20,11 @@ class ViewController: UIViewController {
     
     @IBAction func didTapPlayCustomMessage(_ sender: UIButton) {
         let options: [BuglePiece : Any] = [
-            .cancel: "No, forget it",
-            .message: "Push to master",
+            .cancel: "No, forget it",            
+            .title: "Are you sure?",
             .action:  "Yes, I'm a savage",
         ]
-        Bugle.shared.play("Are you sure?", options, on: self, ofType: .risky)
+        Bugle.shared.play("Push to master", options, on: self, ofType: .risky)
     }
     
 }

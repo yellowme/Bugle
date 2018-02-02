@@ -6,7 +6,9 @@
 //  Copyright © 2018 Yellowme. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIAlertController
+import UIKit.UIColor
+import UIKit.UIViewController
 
 extension Bugle {
     /**

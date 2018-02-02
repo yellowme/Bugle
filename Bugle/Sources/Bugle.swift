@@ -6,7 +6,8 @@
 //  Copyright © 2018 Yellowme. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIAlertController
+import UIKit.UIViewController
 
 /**
  Implement this on your UIViewController in order to listen to user actions.
@@ -15,6 +16,11 @@ import UIKit
     func didConfirm()
     @objc optional func didCancel()
 }
+
+/**
+ Common bugle configuration pieces definition
+ */
+public typealias BugleOptions = [BuglePiece: Any]
 
 /**
  Helper for displaying alerts without writing boilerplate code.
@@ -28,14 +34,14 @@ public class Bugle {
     /**
      Set of user defined options after calling "setup" method.
      */
-    private static var preferredOptions: [BuglePiece: Any]?
+    private static var preferredOptions: BugleOptions?
 
     /**
      Establish preferred user options when calling "play" method.
      If this method is not called before trying to display an alert the
      application would crash.
      */
-    public class func setup(with options: [BuglePiece: Any]) {
+    public class func setup(with options: BugleOptions) {
         Bugle.preferredOptions = options
     }
     
@@ -45,57 +51,48 @@ public class Bugle {
     private init() { }
     
     /**
+     Displays the UIAlertViewController depending on options given or
+     singletion setup.
      
+     - parameter message: Content message.
+     - parameter options: Set of custom params which modify preferred behavior defined by the user.
+     - parameter decorated: Flag to decide whether the alert should change it's tint color or not.
+     - parameter controller: Reference from where this method its called.
+     - parameter type: Could be "single", "confirmation", "risky.
      */
     public func play(
         _ message: String,
-        _ options: [BuglePiece: Any]? = nil,
+        _ options: BugleOptions? = nil,
         _ decorated: Bool = true,
         on controller: UIViewController,
         ofType type: BugleType = .single) {
         
-        guard let preferredOptions = options ?? Bugle.preferredOptions else {
-            fatalError("Error - you must call setup before accessing this method")
-        }
-        
-        guard let style = type.style(for: preferredOptions) else {
-            fatalError("Error - you must provide tint and errorTint values")
-        }
-        
-        guard let title = (options?[.title] as? String) ?? (Bugle.preferredOptions?[.title] as? String) else {
-            fatalError("Error - you must provide a common alert title")
-        }
-        
-        let alert = prepare(with: title, message)
-        
-        guard let actionTitle = (options?[.action] as? String) ?? (Bugle.preferredOptions?[.action] as? String) else {
-            fatalError("Error - you must provide a common action title")
-        }
-        
+        // Prepare setup or thorw some fatal errors
+        let options = merge(options, with: Bugle.preferredOptions)
+        let alert = prepare(with: options.title, message)
+        let style = type.style(for: options.tinter)
         let delegate: BugleDelegate? = (controller as? BugleDelegate)
         
+        // Decide actions and styles
         switch type {
         case .risky:
             fallthrough
         case .confirmation:
-            alert.addAction(UIAlertAction(title: actionTitle, style: style.confirm, handler: { (action: UIAlertAction!) in
+            alert.addAction(UIAlertAction(title: options.action, style: style.confirm, handler: { (action: UIAlertAction!) in
                 delegate?.didConfirm()
             }))
             
-            guard let cancelMessage = preferredOptions[.cancel] as? String else {
-                fatalError("Error - you must provide a cancel action label")
-            }
-            
-            alert.addAction(UIAlertAction(title: cancelMessage, style: style.cancel, handler: { (action: UIAlertAction!) in
+            alert.addAction(UIAlertAction(title: options.cancel, style: style.cancel, handler: { (action: UIAlertAction!) in
                 delegate?.didCancel?()
             }))
             break
         default:
-            alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertActionStyle.default) { action in
+            alert.addAction(UIAlertAction(title: options.action, style: UIAlertActionStyle.default) { action in
                 delegate?.didConfirm()
             })
         }
         
+        // Now the final step is to present the Alert on the UI
         if decorated, let color = style.color {
             presentDecorated(alert, on: controller, tintColor: color)
         } else {

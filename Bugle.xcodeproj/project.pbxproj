@@ -10,6 +10,7 @@
 		A0FC9D0D2023EC350034C2EB /* BuglePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D0C2023EC350034C2EB /* BuglePiece.swift */; };
 		A0FC9D0F2023EC3E0034C2EB /* BugleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D0E2023EC3E0034C2EB /* BugleType.swift */; };
 		A0FC9D112023EC480034C2EB /* Bugle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D102023EC480034C2EB /* Bugle+Ext.swift */; };
+		A0FC9D1320241F270034C2EB /* Bugle+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D1220241F270034C2EB /* Bugle+Merge.swift */; };
 		A0FE4EFE200FDA4400433393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4EFD200FDA4400433393 /* AppDelegate.swift */; };
 		A0FE4F00200FDA4400433393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4EFF200FDA4400433393 /* ViewController.swift */; };
 		A0FE4F03200FDA4400433393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FE4F01200FDA4400433393 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		A0FC9D0C2023EC350034C2EB /* BuglePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuglePiece.swift; sourceTree = "<group>"; };
 		A0FC9D0E2023EC3E0034C2EB /* BugleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugleType.swift; sourceTree = "<group>"; };
 		A0FC9D102023EC480034C2EB /* Bugle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bugle+Ext.swift"; sourceTree = "<group>"; };
+		A0FC9D1220241F270034C2EB /* Bugle+Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bugle+Merge.swift"; sourceTree = "<group>"; };
 		A0FE4EFA200FDA4400433393 /* Bugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bugle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FE4EFD200FDA4400433393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FE4EFF200FDA4400433393 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,9 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				A0FE4F0F200FDAB600433393 /* Bugle.swift */,
+				A0FC9D1220241F270034C2EB /* Bugle+Merge.swift */,
+				A0FC9D102023EC480034C2EB /* Bugle+Ext.swift */,
 				A0FC9D0C2023EC350034C2EB /* BuglePiece.swift */,
 				A0FC9D0E2023EC3E0034C2EB /* BugleType.swift */,
-				A0FC9D102023EC480034C2EB /* Bugle+Ext.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				A0FC9D0D2023EC350034C2EB /* BuglePiece.swift in Sources */,
 				A0FC9D0F2023EC3E0034C2EB /* BugleType.swift in Sources */,
 				A0FE4F10200FDAB600433393 /* Bugle.swift in Sources */,
+				A0FC9D1320241F270034C2EB /* Bugle+Merge.swift in Sources */,
 				A0FE4F12200FDB2600433393 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

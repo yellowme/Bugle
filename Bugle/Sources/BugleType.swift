@@ -9,9 +9,11 @@
 import UIKit
 
 /**
- Wrapper for define a style for the alert
+ Wrappers for define style and setup for the alert
  */
 typealias BugleActionStyles = (confirm: UIAlertActionStyle, cancel: UIAlertActionStyle, color: UIColor?)
+typealias Tinter = (tint: UIColor?, errorTint: UIColor?)
+typealias MergedOptions = (title: String, action: String, cancel: String, tinter: Tinter)
 
 /**
  Available bugle types with defined styles and setups
@@ -28,14 +30,12 @@ public enum BugleType {
      
      - returns: Set of styles given a type.
      */
-    func style(for options: [BuglePiece : Any]?) -> BugleActionStyles? {
-        guard let options = options else { return nil }
-        
+    func style(for options: Tinter) -> BugleActionStyles {
         switch self {
         case .risky:            
-            return (.cancel, .default, options[.errorTint] as? UIColor)
+            return (.cancel, .default, options.errorTint)
         default:
-            return (.default, .cancel, options[.tint] as? UIColor)
+            return (.default, .cancel, options.tint)
         }
     }
 }

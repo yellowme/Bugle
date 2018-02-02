@@ -27,20 +27,15 @@ public enum BuglePiece {
     /**
      Is the common cancelation message. (e.g., No, Cancel, Forget it!)
      */
-    case cancel
+    case cancel //REQUIRED
     
     /**
      Is the common cancelation string message.
      */
-    case title
+    case title //REQUIRED
     
     /**
      Is the common confirmation action string message.
      */
-    case action
-    
-    /**
-     Is the common message displayed on the alert.
-     */
-    case message
+    case action //REQUIRED    
 }

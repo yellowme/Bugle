@@ -7,24 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0FC9D0D2023EC350034C2EB /* BuglePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D0C2023EC350034C2EB /* BuglePiece.swift */; };
-		A0FC9D0F2023EC3E0034C2EB /* BugleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D0E2023EC3E0034C2EB /* BugleType.swift */; };
-		A0FC9D112023EC480034C2EB /* Bugle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D102023EC480034C2EB /* Bugle+Ext.swift */; };
-		A0FC9D1320241F270034C2EB /* Bugle+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC9D1220241F270034C2EB /* Bugle+Merge.swift */; };
+		A05748662251764C00ECFB13 /* UIViewController+Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05748652251764C00ECFB13 /* UIViewController+Bridge.swift */; };
 		A0FE4EFE200FDA4400433393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4EFD200FDA4400433393 /* AppDelegate.swift */; };
 		A0FE4F00200FDA4400433393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4EFF200FDA4400433393 /* ViewController.swift */; };
 		A0FE4F03200FDA4400433393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FE4F01200FDA4400433393 /* Main.storyboard */; };
 		A0FE4F05200FDA4400433393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FE4F04200FDA4400433393 /* Assets.xcassets */; };
 		A0FE4F08200FDA4400433393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FE4F06200FDA4400433393 /* LaunchScreen.storyboard */; };
 		A0FE4F10200FDAB600433393 /* Bugle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4F0F200FDAB600433393 /* Bugle.swift */; };
-		A0FE4F12200FDB2600433393 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4F11200FDB2600433393 /* Utils.swift */; };
+		A0FE4F12200FDB2600433393 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4F11200FDB2600433393 /* UIColor+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A0FC9D0C2023EC350034C2EB /* BuglePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuglePiece.swift; sourceTree = "<group>"; };
-		A0FC9D0E2023EC3E0034C2EB /* BugleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugleType.swift; sourceTree = "<group>"; };
-		A0FC9D102023EC480034C2EB /* Bugle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bugle+Ext.swift"; sourceTree = "<group>"; };
-		A0FC9D1220241F270034C2EB /* Bugle+Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bugle+Merge.swift"; sourceTree = "<group>"; };
+		A05748652251764C00ECFB13 /* UIViewController+Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Bridge.swift"; sourceTree = "<group>"; };
 		A0FE4EFA200FDA4400433393 /* Bugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bugle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FE4EFD200FDA4400433393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FE4EFF200FDA4400433393 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +27,7 @@
 		A0FE4F07200FDA4400433393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0FE4F09200FDA4400433393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FE4F0F200FDAB600433393 /* Bugle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bugle.swift; sourceTree = "<group>"; };
-		A0FE4F11200FDB2600433393 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A0FE4F11200FDB2600433393 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +71,8 @@
 			children = (
 				A0FE4EFD200FDA4400433393 /* AppDelegate.swift */,
 				A0FE4EFF200FDA4400433393 /* ViewController.swift */,
-				A0FE4F11200FDB2600433393 /* Utils.swift */,
+				A05748652251764C00ECFB13 /* UIViewController+Bridge.swift */,
+				A0FE4F11200FDB2600433393 /* UIColor+Ext.swift */,
 				A0FE4F01200FDA4400433393 /* Main.storyboard */,
 				A0FE4F04200FDA4400433393 /* Assets.xcassets */,
 				A0FE4F06200FDA4400433393 /* LaunchScreen.storyboard */,
@@ -90,10 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				A0FE4F0F200FDAB600433393 /* Bugle.swift */,
-				A0FC9D1220241F270034C2EB /* Bugle+Merge.swift */,
-				A0FC9D102023EC480034C2EB /* Bugle+Ext.swift */,
-				A0FC9D0C2023EC350034C2EB /* BuglePiece.swift */,
-				A0FC9D0E2023EC3E0034C2EB /* BugleType.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -125,7 +116,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Yellowme;
 				TargetAttributes = {
 					A0FE4EF9200FDA4400433393 = {
@@ -170,14 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0FC9D112023EC480034C2EB /* Bugle+Ext.swift in Sources */,
 				A0FE4F00200FDA4400433393 /* ViewController.swift in Sources */,
 				A0FE4EFE200FDA4400433393 /* AppDelegate.swift in Sources */,
-				A0FC9D0D2023EC350034C2EB /* BuglePiece.swift in Sources */,
-				A0FC9D0F2023EC3E0034C2EB /* BugleType.swift in Sources */,
+				A05748662251764C00ECFB13 /* UIViewController+Bridge.swift in Sources */,
 				A0FE4F10200FDAB600433393 /* Bugle.swift in Sources */,
-				A0FC9D1320241F270034C2EB /* Bugle+Merge.swift in Sources */,
-				A0FE4F12200FDB2600433393 /* Utils.swift in Sources */,
+				A0FE4F12200FDB2600433393 /* UIColor+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +205,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -224,6 +213,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -275,6 +265,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -282,6 +273,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

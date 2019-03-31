@@ -30,7 +30,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'MyApp' do
-    pod 'Bugle'
+    pod 'Bugle', '~> 2.0'
 end
 ```
 
@@ -40,43 +40,48 @@ Then, run the following command:
 $ pod install
 ```
 
-## Usage
+## Simple usage
 
-In your `application:didFinishLaunchingWithOptions: method`, setup the  `shared` instance of `Bugle`:
+At your view controller use:
 
 ```swift
-Bugle.setup(with: options)
+let alert = UIAlertController(style: .alert, title: "Bugle", message: "This is an alert with title")
+alert.addAction(title: "OK", style: .cancel)
+alert.show()
 ```
 
-Where `options` is a configuration struct:
+## Customize
+
+Since this version is depending directly to `UIAlertController` extensions you could create a file with your own extension methods:
 
 ```swift
-extension AppDelegate {
-    fileprivate var options: BugleOptions {
-        return [
-            //.tint: UIColor.green,
-            .cancel: "No",
-            .title: "Bugle App Delegate title!",
-            .action: "Understood",
-            //.errorTint: UIColor.yellow
-        ]
+extension String {
+    // NOTE: Maybe you could use localization approaches here.
+    static let defaultAlertTitle = "Bugle"
+    static let defaultAlertActionLabel = "Understood"
+}
+
+// MARK: - Initializers
+extension UIAlertController {
+    /// Create new alert view controller.
+    ///
+    /// - Parameters:
+    ///   - message: alert controller's message (default is nil).
+    ///   - tintColor: alert controller's tint color (default is nil)
+    convenience init(message: String? = nil, tintColor: UIColor? = nil) {
+        self.init(
+            title: String.defaultAlertTitle,
+            message: message,
+            preferredStyle: .alert
+        )
     }
 }
-```
 
-See the [properties](#properties) section for more information about `BugleOptions` keys and values.
-
-Also, If you want to liste to actions on the dialog just add the `BugleDelegate`:
-
-```swift
-extension ViewController: BugleDelegate {
-    func didConfirm() {
-        debugPrint("Confirm bugle")
-    }
-
-    // This method is optional
-    func didCancel() {
-        //TODO: Do something
+extension UIAlertController {
+    /// Displays an alert view by adding the default action in order to be able to dismiss it.
+    func play() {
+        self.addAction(UIAlertAction(title: String.defaultAlertActionLabel, style: .default, handler: nil))
+        self.show()
     }
 }
 ```
@@ -84,29 +89,11 @@ extension ViewController: BugleDelegate {
 Then:
 
 ```swift
-Bugle.shared.play("Hello World", on: self)
+let alert = UIAlertController(message: "Hello World!")
+alert.play()
 ```
 
-or you can override some setup:
-
-```swift
-let options: BugleOptions = [
-    .cancel: "No, forget it",
-    .title: "Are you sure?",
-    .action:  "Yes, I'm a savage",
-]
-Bugle.shared.play("Push to master", options, on: self, ofType: .risky)
-```
-
-## Properties
-
-| Property | Type | Required |
-| --- | --- | --- |
-| title | String | :white_check_mark:
-| action | String | :white_check_mark:
-| cancel | String | :white_check_mark:
-| tint | UIColor | :x:
-| errorTint | UIColor | :x:
+See a [full version here](https://github.com/yellowme/Bugle/blob/master/Bugle/Example/UIViewController%2BBridge.swift)
 
 ## Contributors
 
